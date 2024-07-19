@@ -10,4 +10,8 @@ class Modelo(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT, related_name="modelos", null=True, blank=True)
 
     def __str__(self):
-        return f"{self.nome} ({self.marca})"
+        if self.marca:
+            return f"{self.nome} - {self.marca} - ({self.id})"
+        else: 
+            return f"{self.nome} ({self.id})"
+

@@ -15,4 +15,4 @@ class Veiculo(models.Model):
     acessorios = models.ForeignKey(Acessorio, on_delete=models.PROTECT, related_name="veiculos", null=True, blank=True)
 
     def __str__(self):
-        return f"{self.modelo} {self.ano} {self.cor}"
+        return f"{self.modelo} - {self.ano} - {self.cor}"
